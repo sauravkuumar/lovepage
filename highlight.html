@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Chat 💬</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff0f5;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.ibb.co/WGKzS8x/heart-icon.png');
+      background-size: 50px;
+      opacity: 0.05;
+      animation: animateHearts 40s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes animateHearts {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 0 -2000px;
+      }
+    }
+
+    .chat-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      z-index: 1;
+      position: relative;
+    }
+
+    .chat-wrapper {
+      flex: 1;
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      border-radius: 20px 20px 0 0;
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .chat-row {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .chat-left {
+      justify-content: flex-start;
+    }
+
+    .chat-right {
+      justify-content: flex-end;
+    }
+
+    .chat-left,
+    .chat-right {
+      display: flex;
+      width: 100%;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-left .avatar {
+      margin-right: 10px;
+    }
+
+    .chat-right .avatar {
+      margin-left: 10px;
+    }
+
+    .chat-bubble {
+      max-width: 70%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      animation: fadeInUp 0.5s ease;
+      word-wrap: break-word;
+    }
+
+    .chat-left .chat-bubble {
+      background-color: #ffe6eb;
+      border-bottom-left-radius: 0;
+    }
+
+    .chat-right .chat-bubble {
+      background-color: #daf1f5;
+      border-bottom-right-radius: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .chat-input-area {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: #fff;
+      border-top: 2px solid #ffd3dc;
+      z-index: 2;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 12px 14px;
+      border: 1.5px solid #ffc0cb;
+      border-radius: 20px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .chat-input:focus {
+      border-color: #ff69b4;
+      box-shadow: 0 0 5px #ff69b4;
+    }
+
+    .send-btn {
+      background: #ff69b4;
+      border: none;
+      padding: 10px 16px;
+      margin-left: 10px;
+      color: white;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    .emoji-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ffd1dc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-hearts"></div>
+
+  <div class="chat-container">
+    <div class="chat-wrapper">
+
+      <div class="chat-row chat-left">
+        <a href="boypage.html"><img src="https://i.ibb.co/KJc7r1V/Whats-App-Image-2025-05-04-at-01-50-24-8d7e99be.jpg" class="avatar"></a>
+        <div class="chat-bubble">Tumse kuch kehna tha... dil se ❤️</div>
+      </div>
+
+      <div class="chat-row chat-right">
+        <div class="chat-bubble">Hmm... kya? 😅</div>
+        <a href="girlpage.html"><img src="https://i.ibb.co/gFR4k1Cx/2.jpg" class="avatar"></a>
+      </div>
+
+      <div class="chat-row chat-left">
+        <a href="boypage.html"><img src="https://i.ibb.co/KJc7r1V/Whats-App-Image-2025-05-04-at-01-50-24-8d7e99be.jpg" class="avatar"></a>
+        <div class="chat-bubble">Main tumse sach mein bahut pyaar karta hoon... 💖</div>
+      </div>
+
+      <div class="chat-row chat-right">
+        <div class="chat-bubble">😳 Tum pagal ho kya?</div>
+        <a href="girlpage.html"><img src="https://i.ibb.co/gFR4k1Cx/2.jpg" class="avatar"></a>
+      </div>
+
+      <div class="chat-row chat-left">
+        <a href="boypage.html"><img src="https://i.ibb.co/KJc7r1V/Whats-App-Image-2025-05-04-at-01-50-24-8d7e99be.jpg" class="avatar"></a>
+        <div class="chat-bubble">Nahi... sirf tumhara deewana ho gaya hoon 💌</div>
+      </div>
+
+      <div class="chat-row chat-right">
+        <div class="chat-bubble">Mujhe abhi nahi pata... 🙈</div>
+        <a href="girlpage.html"><img src="https://i.ibb.co/gFR4k1Cx/2.jpg" class="avatar"></a>
+      </div>
+
+      <div class="chat-row chat-left">
+        <a href="boypage.html"><img src="https://i.ibb.co/KJc7r1V/Whats-App-Image-2025-05-04-at-01-50-24-8d7e99be.jpg" class="avatar"></a>
+        <div class="chat-bubble">Bas ek baar haan keh do... zindagi bhar khush rakhunga 💍</div>
+      </div>
+
+
+      <div class="chat-row chat-left">
+        <a href="boypage.html"><img src="https://i.ibb.co/KJc7r1V/Whats-App-Image-2025-05-04-at-01-50-24-8d7e99be.jpg" class="avatar"></a>
+        <div class="chat-bubble">Toh maan loon ki haan hai? 😍</div>
+      </div>
+
+      
+
+    </div>
+
+    <div class="chat-input-area">
+      <button class="emoji-btn">😊</button>
+      <input type="text" class="chat-input" placeholder="Type something lovely..." />
+      <button class="send-btn">Send</button>
+    </div>
+  </div>
+</body>
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  
+    document.onkeydown = function(e) {
+      if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+        return false;
+      }
+  
+      if (e.keyCode === 123) {
+        return false;
+      }
+  
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
+        return false;
+      }
+  
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+        return false;
+      }
+  
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+        return false;
+      }
+    };
+  </script>
+</html>

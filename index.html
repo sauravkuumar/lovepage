@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hey You 💬</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background: #f8f9fa;
+      overflow-x: hidden;
+    }
+
+    .modal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 450px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .modal-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .modal-content input {
+      padding: 10px 14px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .modal-content button:hover {
+      background: #0056b3;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .content {
+      display: none;
+      text-align: center;
+      padding: 80px 20px;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      color: #d6336c;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #333;
+      margin: 10px auto;
+      max-width: 700px;
+    }
+
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 220px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    button.love-button {
+      margin-top: 40px;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff3366;
+      animation: pulse 2s infinite;
+    }
+
+    button.love-button:hover {
+      background-color: #e62e5c;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0px #ff3366; }
+      50% { box-shadow: 0 0 20px #ff3366; }
+      100% { box-shadow: 0 0 0px #ff3366; }
+    }
+
+    #surpriseText {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #b30047;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <h2>Hey Love One 👋</h2>
+      <p>Enter the day & month we met at the restaurant (e.g., 3 Sep):</p>
+      <input type="text" id="dateInput" placeholder="Enter date (e.g. 3 Sep)" />
+      <br>
+      <button onclick="checkDate()">Submit</button>
+    </div>
+  </div>
+
+  <div class="content" id="mainContent">
+    <h1>To the Love of My Life 💕</h1>
+    <p>You light up my world like no one else. This website is just a small piece of what you mean to me. ❤️</p>
+    <div class="gallery">
+      <img src="https://i.ibb.co/FLv3XH1q/1.jpg" alt="Moment 1" />
+      <img src="https://i.ibb.co/gFR4k1Cx/2.jpg" alt="Moment 2" />
+      <img src="https://i.ibb.co/XZtB4nyk/3.jpg" alt="Moment 3" />
+    </div>
+    <button class="love-button" onclick="showSurprise()">Click Me 💌</button>
+    <p id="surpriseText"></p>
+  </div>
+
+  <script>
+    function checkDate() {
+      const userInput = document.getElementById("dateInput").value.trim().toLowerCase();
+      const correctDate = "13 jan";
+  
+      if (userInput === correctDate) {
+        document.getElementById("welcomeModal").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        document.body.style.background = "linear-gradient(to bottom right, #fff0f5, #ffe4e1)";
+  
+        
+        setTimeout(() => {
+          window.location.href = "highlight.html";
+        }, 10000); 
+  
+      } else {
+        alert("That's not the right date, sweetheart. 😭😭😭😭😭");
+      }
+    }
+  
+    function showSurprise() {
+      document.getElementById("surpriseText").innerText =
+        "You’re not just a memory, you're my present and my forever. I love you deeply, Bipasha. 💖";
+    }
+  </script>
+  
+</body>
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  document.onkeydown = function(e) {
+    if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+      return false;
+    }
+
+    if (e.keyCode === 123) {
+      return false;
+    }
+
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
+      return false;
+    }
+
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+      return false;
+    }
+
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+      return false;
+    }
+  };
+</script>
+</html>
